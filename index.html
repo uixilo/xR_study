@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="aframe.min.js"></script>
+  <script src="aframe-ar.min.js"></script>
+</head>
+<body style='margin: 0; overflow: hidden;'>
+<a-scene embedded artoolkit='sourceType: webcam;' renderer='precision: medium; logarithmicDepthBuffer: true; antialias: true; colorManagement: true; sortObjects: true;'>
+  <a-assets>
+    <a-asset-item id="santa" src="santa.glb"></a-asset-item>
+  </a-assets>
+  <a-marker type="pattern" url="santa.patt">
+    <a-entity gltf-model="#santa" scale="0.3 0.3 0.3" modify-materials></a-entity>
+  </a-marker>
+  <a-entity camera="far:100000; near:0.01"></a-entity>
+</a-scene>
+</body>
+</html>
